@@ -1,0 +1,2 @@
+Desa aquí els PDF dels temes.
+Des de les pàgines de tema s'hi enllaça així: href="../materials/nom-del-fitxer.pdf"

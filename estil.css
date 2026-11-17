@@ -1,0 +1,421 @@
+/* =========================================================
+   FULL D'ESTILS COMÚ
+   Aquí es defineixen els colors, les fonts i el disseny.
+   Si vols canviar un color, canvia'l només aquí a dalt.
+   ========================================================= */
+
+:root {
+  --fons: #F3EFE7;          /* beige paper */
+  --fons-targeta: #FAF7F1;  /* una mica més clar, per a les targetes */
+  --text: #1C1A1B;
+  --text-suau: #5B5650;
+  --filet: #DDD4C0;
+
+  /* Colors dels blocs */
+  --llengues: #1F6F82;      /* blau petroli */
+  --comunicacio: #C9603A;   /* taronja teula */
+  --literaria: #8A2F43;     /* borgonya */
+  --reflexio: #6A8A72;      /* sàlvia */
+
+  --pau: #DCE46A;           /* llima, etiqueta «Contingut PAU» */
+
+  --font-titols: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --amplada: 60rem;
+}
+
+/* Cada bloc fa servir el seu color a través de la variable --color */
+.bloc-llengues    { --color: var(--llengues); }
+.bloc-comunicacio { --color: var(--comunicacio); }
+.bloc-literaria   { --color: var(--literaria); }
+.bloc-reflexio    { --color: var(--reflexio); }
+
+/* ---------- Base ---------- */
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fons);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titols);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0;
+}
+
+a { color: inherit; }
+
+.contenidor {
+  max-width: var(--amplada);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Capçalera ---------- */
+
+.capcalera {
+  border-bottom: 1px solid var(--filet);
+}
+
+.capcalera .contenidor {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.marca {
+  font-family: var(--font-titols);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.marca em {
+  font-style: italic;
+  color: var(--text-suau);
+}
+
+.curs {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-suau);
+  white-space: nowrap;
+}
+
+/* ---------- Portada (pàgina d'inici) ---------- */
+
+.portada {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--filet);
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-suau);
+  margin-bottom: 0.9rem;
+}
+
+.portada h1 {
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  max-width: 16ch;
+}
+
+.portada p {
+  max-width: 38rem;
+  margin: 1.2rem 0 0;
+  color: var(--text-suau);
+  font-size: 1.05rem;
+}
+
+/* ---------- Graella dels 4 blocs ---------- */
+
+.blocs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  padding: 2.5rem 0 3.5rem;
+  margin: 0;
+  list-style: none;
+}
+
+.bloc {
+  background: var(--fons-targeta);
+  border: 1px solid var(--filet);
+  border-top: 4px solid var(--color);
+  padding: 1.5rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.bloc-numero {
+  font-family: var(--font-titols);
+  font-style: italic;
+  color: var(--color);
+  font-size: 1rem;
+}
+
+.bloc h2 {
+  font-size: 1.7rem;
+  margin: 0.2rem 0 0.6rem;
+}
+
+.bloc > p {
+  margin: 0 0 1.1rem;
+  color: var(--text-suau);
+  font-size: 0.95rem;
+}
+
+/* Llista de temes dins de cada bloc */
+.temes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--filet);
+}
+
+.temes li {
+  border-bottom: 1px solid var(--filet);
+}
+
+.temes li:last-child { border-bottom: 0; }
+
+/* Cada tema: número · nom (i etiqueta PAU) · fletxa o «Aviat» */
+.tema {
+  display: grid;
+  grid-template-columns: 1.9rem 1fr auto;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.tema-num {
+  font-family: var(--font-titols);
+  font-style: italic;
+  color: var(--color);
+  font-size: 1.05rem;
+}
+
+/* Tema amb pàgina (és un enllaç) */
+a.tema .tema-nom { font-weight: 500; }
+
+a.tema:hover .tema-nom,
+a.tema:focus-visible .tema-nom {
+  color: var(--color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+a.tema::after {
+  content: "→";
+  color: var(--color);
+}
+
+/* Tema sense pàgina encara */
+div.tema { color: var(--text-suau); }
+
+div.tema::after {
+  content: "Aviat";
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* Etiqueta «Contingut PAU» */
+.pau {
+  display: inline-block;
+  background: var(--pau);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-style: normal;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.3rem 0.45rem;
+  margin-left: 0.35rem;
+  white-space: nowrap;
+  vertical-align: 0.1rem;
+  text-decoration: none;
+}
+
+/* Dins la llista de temes, l'etiqueta va sempre a sota del nom */
+.tema-nom .pau {
+  display: table;
+  margin: 0.35rem 0 0.1rem;
+}
+
+.llegenda {
+  font-size: 0.9rem !important;
+  margin-top: 1.4rem !important;
+}
+
+.llegenda .pau { margin: 0 0.35rem 0 0; }
+
+/* ---------- Pàgina de tema ---------- */
+
+.molla {
+  font-size: 0.85rem;
+  color: var(--text-suau);
+  padding-top: 1.5rem;
+}
+
+.molla a { text-decoration: none; }
+.molla a:hover { color: var(--color, var(--text)); text-decoration: underline; }
+
+.tema-capcalera {
+  padding: 1.5rem 0 2rem;
+  border-bottom: 1px solid var(--filet);
+}
+
+.tema-capcalera .etiqueta {
+  color: var(--color);
+  font-weight: 600;
+}
+
+.tema-capcalera .etiqueta::before {
+  content: "";
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--color);
+  margin-right: 0.5rem;
+  vertical-align: 0.05rem;
+}
+
+.tema-capcalera h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.tema-capcalera p {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: var(--text-suau);
+}
+
+/* Seccions de materials */
+.seccio {
+  padding: 2rem 0 0.5rem;
+}
+
+.seccio h2 {
+  font-size: 1.45rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--text);
+}
+
+.materials {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.materials li {
+  border-bottom: 1px solid var(--filet);
+}
+
+.materials a {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  text-decoration: none;
+}
+
+.materials a:hover .material-titol,
+.materials a:focus-visible .material-titol {
+  color: var(--color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Etiqueta del tipus de material: PDF, Enllaç, Google… */
+.tipus {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color);
+  border: 1px solid currentColor;
+  padding: 0.15rem 0.4rem;
+  text-align: center;
+  align-self: center;
+}
+
+.material-titol {
+  font-weight: 500;
+}
+
+.material-nota {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-suau);
+  font-weight: 400;
+}
+
+.material-fletxa {
+  color: var(--text-suau);
+}
+
+/* Text per a un apartat que encara no té materials */
+.buit {
+  padding: 0.9rem 0;
+  color: var(--text-suau);
+  font-style: italic;
+  border-bottom: 1px solid var(--filet);
+}
+
+.tema-capcalera .pau {
+  margin: 0 0 0 0.5rem;
+  vertical-align: 0.05rem;
+}
+
+.tornar {
+  display: inline-block;
+  margin: 2.5rem 0 3rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--filet);
+}
+
+.tornar:hover { border-color: var(--text); }
+
+/* ---------- Peu de pàgina ---------- */
+
+.peu {
+  border-top: 1px solid var(--filet);
+  font-size: 0.85rem;
+  color: var(--text-suau);
+}
+
+.peu .contenidor {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+/* ---------- Mòbil ---------- */
+
+@media (max-width: 680px) {
+  .contenidor { padding: 0 1rem; }
+
+  .capcalera .contenidor { flex-wrap: wrap; }
+
+  .portada { padding: 2.25rem 0 1.75rem; }
+
+  .blocs {
+    grid-template-columns: 1fr;
+    padding: 1.75rem 0 2.5rem;
+  }
+
+  .bloc { padding: 1.25rem 1.1rem 1rem; }
+
+  .materials a {
+    grid-template-columns: 1fr auto;
+    gap: 0.35rem 0.75rem;
+  }
+
+  .tipus {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}

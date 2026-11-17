@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Els apunts de català</title>
+  <meta name="description" content="Apunts, esquemes, resums i trucs de Llengua i literatura catalana per a l'alumnat de Batxillerat.">
+
+  <!-- Fonts de Google: Newsreader (títols) i Inter (text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estil.css">
+</head>
+<body>
+
+  <header class="capcalera">
+    <div class="contenidor">
+      <a class="marca" href="index.html">Els apunts de <em>català</em></a>
+      <span class="curs">Batxillerat</span>
+    </div>
+  </header>
+
+  <main class="contenidor">
+
+    <section class="portada">
+      <span class="etiqueta">Llengua i literatura catalana</span>
+      <h1>Els apunts de català</h1>
+      <p>Hola! Aquí tens tot el que fem a classe, ben endreçat: apunts, esquemes, resums i algun truc per no equivocar-te a l'examen. Tria un tema i som-hi.</p>
+      <p class="llegenda"><span class="pau">Contingut PAU</span> Aquests temes entren a les PAU: no te'ls saltis!</p>
+    </section>
+
+    <!--
+      ELS 4 BLOCS I ELS 20 TEMES
+
+      Un tema SENSE pàgina encara (surt en gris amb «Aviat»):
+        <li><div class="tema"><span class="tema-num">3</span><span class="tema-nom">Nom del tema</span></div></li>
+
+      Un tema AMB pàgina (és un enllaç i surt amb una fletxa):
+        <li><a class="tema" href="temes/tema-3.html"><span class="tema-num">3</span><span class="tema-nom">Nom del tema</span></a></li>
+
+      Per passar un tema de «sense pàgina» a «amb pàgina», canvia
+        <div class="tema">  per  <a class="tema" href="temes/tema-NÚMERO.html">
+        </div>              per  </a>
+
+      Etiqueta PAU: afegeix  <span class="pau">Contingut PAU</span>  just després del nom, dins de tema-nom.
+    -->
+    <ul class="blocs">
+
+      <!-- BLOC 1 -->
+      <li class="bloc bloc-llengues">
+        <span class="bloc-numero">Bloc 1</span>
+        <h2>Llengües i parlants</h2>
+        <p>La realitat sociolingüística, la variació i la diversitat de llengües.</p>
+        <ul class="temes">
+          <li><div class="tema"><span class="tema-num">1</span><span class="tema-nom">Llengua i societat</span></div></li>
+          <li><div class="tema"><span class="tema-num">2</span><span class="tema-nom">La variació històrica</span></div></li>
+          <li><div class="tema"><span class="tema-num">3</span><span class="tema-nom">La variació geogràfica <span class="pau">Contingut PAU</span></span></div></li>
+          <li><div class="tema"><span class="tema-num">4</span><span class="tema-nom">Fonètica: el vocalisme <span class="pau">Contingut PAU</span></span></div></li>
+          <li><div class="tema"><span class="tema-num">5</span><span class="tema-nom">Fonètica: el consonantisme <span class="pau">Contingut PAU</span></span></div></li>
+        </ul>
+      </li>
+
+      <!-- BLOC 2 -->
+      <li class="bloc bloc-comunicacio">
+        <span class="bloc-numero">Bloc 2</span>
+        <h2>Comunicació</h2>
+        <p>Comprensió i producció de textos orals, escrits i multimodals.</p>
+        <ul class="temes">
+          <li><div class="tema"><span class="tema-num">6</span><span class="tema-nom">El text i les seves propietats <span class="pau">Contingut PAU</span></span></div></li>
+          <li><div class="tema"><span class="tema-num">7</span><span class="tema-nom">Ortografia, puntuació i revisió de textos <span class="pau">Contingut PAU</span></span></div></li>
+          <li><div class="tema"><span class="tema-num">8</span><span class="tema-nom">Tipologies textuals i gèneres discursius</span></div></li>
+        </ul>
+      </li>
+
+      <!-- BLOC 3 -->
+      <li class="bloc bloc-literaria">
+        <span class="bloc-numero">Bloc 3</span>
+        <h2>Educació literària</h2>
+        <p>Lectura, interpretació i context de les obres de la literatura catalana.</p>
+        <ul class="temes">
+          <li><div class="tema"><span class="tema-num">9</span><span class="tema-nom">Gèneres literaris i tòpics</span></div></li>
+          <li><div class="tema"><span class="tema-num">10</span><span class="tema-nom">Literatura medieval</span></div></li>
+          <li><div class="tema"><span class="tema-num">11</span><span class="tema-nom">Literatura de l’edat moderna</span></div></li>
+          <li><div class="tema"><span class="tema-num">12</span><span class="tema-nom">El segle XIX</span></div></li>
+          <li><div class="tema"><span class="tema-num">13</span><span class="tema-nom">Del tombant del segle XX a la Guerra Civil <span class="pau">Contingut PAU</span></span></div></li>
+          <li><div class="tema"><span class="tema-num">14</span><span class="tema-nom">De la postguerra a l’actualitat <span class="pau">Contingut PAU</span></span></div></li>
+        </ul>
+      </li>
+
+      <!-- BLOC 4 -->
+      <li class="bloc bloc-reflexio">
+        <span class="bloc-numero">Bloc 4</span>
+        <h2>Reflexió sobre la llengua</h2>
+        <p>Gramàtica, lèxic i normativa per entendre com funciona la llengua.</p>
+        <ul class="temes">
+          <li><div class="tema"><span class="tema-num">15</span><span class="tema-nom">La morfologia i les classes de mots</span></div></li>
+          <li><div class="tema"><span class="tema-num">16</span><span class="tema-nom">El nom i la seva semàntica, morfologia i sintaxi</span></div></li>
+          <li><a class="tema" href="temes/tema-17.html"><span class="tema-num">17</span><span class="tema-nom">El verb i la seva semàntica, morfologia i sintaxi <span class="pau">Contingut PAU</span></span></a></li>
+          <li><div class="tema"><span class="tema-num">18</span><span class="tema-nom">Lèxic i semàntica <span class="pau">Contingut PAU</span></span></div></li>
+          <li><div class="tema"><span class="tema-num">19</span><span class="tema-nom">L’oració simple</span></div></li>
+          <li><div class="tema"><span class="tema-num">20</span><span class="tema-nom">L’oració composta <span class="pau">Contingut PAU</span></span></div></li>
+        </ul>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer class="peu">
+    <div class="contenidor">
+      Els apunts de català · Llengua i literatura catalana de Batxillerat
+    </div>
+  </footer>
+
+</body>
+</html>
